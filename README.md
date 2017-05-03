@@ -3,9 +3,7 @@
 > [http://community.pentaho.com/](http://community.pentaho.com/)
 > Version: 5.3
 
-## How to use this image
-
-You can start containers one by one following next steps:
+## How to use (start containers one by one)
 
 ### Start a PostgreSQL instance
 
@@ -22,10 +20,12 @@ or run script
 ```
 docker run --name pentaho-server -p 8080:8080 --link pentaho-db:postgres -e DB_USER=pentaho -e DB_PASS=secret -d smartstudio/pentaho:5.3
 ```
+or run script
+```
+./scripts/docker-run-pentaho.sh
+```
 
-You can start full infrastructure with docker-compose as follow:
-
-### Start using docker-compose
+## How to use (start with docker-compose )
 
 ```
 docker-compose up -d
