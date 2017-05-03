@@ -73,3 +73,11 @@ docker logs -f pentaho-db
 ```
 docker logs -f pentaho-server
 ```
+
+## See Also
+
+* [https://github.com/leandrocp/pentaho-server-docker](https://github.com/leandrocp/pentaho-server-docker)
+
+## License
+
+[MIT Licensed](https://github.com/vsilva007/docker-pentaho/LICENSE.md)
