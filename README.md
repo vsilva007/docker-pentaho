@@ -23,7 +23,7 @@ docker run --name pentaho-server -p 8080:8080 --link pentaho-db:postgres -e DB_U
 or run script
 ```
 ./scripts/docker-run-pentaho.sh
-``` 
+```
 
 ## How to use (start with docker-compose )
 
@@ -59,3 +59,17 @@ See: [https://registry.hub.docker.com/_/postgres/](https://registry.hub.docker.c
 * `LOCALE` - default: "es_ES.UTF-8 UTF-8"
 * `LANG` - default: es_ES.utf8
 * `INSTALL_PLUGINS` - default: false
+
+## Logs
+
+### PostgreSQL
+
+```
+docker logs -f pentaho-db
+```
+
+### Pentaho
+
+```
+docker logs -f pentaho-server
+```
