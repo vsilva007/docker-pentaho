@@ -80,4 +80,4 @@ docker logs -f pentaho-server
 
 ## License
 
-[MIT Licensed](https://github.com/vsilva007/docker-pentaho/LICENSE.md)
+[MIT Licensed](https://github.com/vsilva007/docker-pentaho/blob/master/LICENSE.md)
