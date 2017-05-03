@@ -23,7 +23,7 @@ docker run --name pentaho-server -p 8080:8080 --link pentaho-db:postgres -e DB_U
 or run script
 ```
 ./scripts/docker-run-pentaho.sh
-```
+``` 
 
 ## How to use (start with docker-compose )
 
