@@ -1,21 +1,27 @@
-pentaho-db:
-  image: postgres:9.3
-  volumes:
-    - /var/lib/postgresql/data
-  ports:
-    - "5432:5432"
-  environment:
-    POSTGRES_USER: pentaho
-    POSTGRES_PASSWORD: secret
-
-pentaho-server:
-  image: smartstudio/pentaho:5.3
-  volumes:
-    - /pentaho-data
-  links:
-    - pentaho-db:postgres
-  ports:
-    - "8080:8080"
-  environment:
-    DB_USER: pentaho
-    DB_PASS: secret
+version: '2.1'
+services:
+  pentaho-db:
+    image: postgres:9.3
+    container_name: pentaho-db
+    volumes:
+      - /var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: pentaho
+      POSTGRES_PASSWORD: secret
+  pentaho-server:
+    image: smartstudio/pentaho:5.3
+    container_name: pentaho-server
+    volumes:
+      - /pentaho-data
+    links:
+      - pentaho-db:postgres
+    ports:
+      - "8080:8080"
+    environment:
+      DB_USER: pentaho
+      DB_PASS: secret
+    depends_on:
+      pentaho-db:
+        condition: service_started
